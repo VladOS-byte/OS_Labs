@@ -1,3 +1,3 @@
 #!/bin/bash
-man bash | grep -o "[a-zA-Z]\{4,\}" | sort | uniq -c | sort -r -n | head -3 | cut -d' ' -f3
+man bash | grep -o "[a-zA-Z]\{4,\}" | sort | uniq -c | sort -r -n | head -3
 exit
