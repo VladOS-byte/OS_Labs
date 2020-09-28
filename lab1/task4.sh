@@ -2,9 +2,9 @@
 if [ $PWD == $HOME ]
 then
 	echo "$PWD"
-	exit 1
+	exit 0
 else
 	echo "Error"
-	exit 0
+	exit 1
 fi
 exit
