@@ -2,7 +2,7 @@
 
 #pids=$(ps axo pid,cmd | tail -n +2 | head -n -6 | awk '{ print $1 }')
 
-pids=$(ps axo pid,cmd | tail -n +2 | grep -v -E 'sudo|awk|tail|grep|ps|bash|./task7.sh' | awk '{ print $1 }')
+pids=$(ps axo pid,cmd | tail -n +2 | awk '{ print $1 }')
 
 touch 7.temp
 
@@ -11,9 +11,9 @@ do
 	awk -v pid=$pid '$1=="read_bytes:" { print pid" "$2 }' /proc/$pid/io >> 7.temp
 done
 
-sleep 1m
+sleep 15s
 
-pids=$(ps axo pid,cmd | tail -n +2 | grep -v -E 'sudo|awk|tail|grep|ps|bash|./task7.sh' | awk '{ print $1 }') 
+pids=$(ps axo pid,cmd | tail -n +2 | awk '{ print $1 }') 
 
 for pid in $pids 
 do 
