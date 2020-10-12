@@ -2,6 +2,8 @@
 
 pids=$(ps -axo pid,start_time --sort=start_time | head -n -6 | tail -n +2 |  awk '{ print $1 }')
 
+#pids=$(ps -axo pid,cmd,start_time --sort=start_time | grep -v -E 'awk|tail|grep|ps|bash|./task4.sh' | tail -n +2 |  awk '{ print $1 }')
+
 echo -n > task4.out
 echo -n > 4.temp
 
