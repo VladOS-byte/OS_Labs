@@ -1,0 +1,28 @@
+1.  1. md LAB6
+    2. cd LAB6
+    3. mem > mem.txt
+    4. cmd > cmd.txt
+    5. echo list disk | diskpart > diskpart.txt
+    6. md TEST 7. xcopy C:\LAB6 C:\LAB6 \TEST
+    8. cd TEST
+    9. copy * data.txt
+    10. for /f "skip=1" %f in ('dir /b /o-d') do del %f
+    
+    
+2.  1. echo %computername%
+    2. md temp  
+    3. net share DataShare=c:\LAB6\temp
+    4. cmd > cmd.txt
+    5. echo copy /y/z c:\WINDOWS\os.txt \\VLADE0C0\DataShare > c:\LAB6\Task2\script.bat
+    6. schtasks /create /SC MINUTE /TN Task2 /TR c:\LAB6\Task2\script.bat
+    7. schtasks /end /TN Task2
+    8. fc c:\LAB6\Task2\os.txt \\VLADE0C0\DataShare\os.txt > diff.txt
+    9. c:\LAB6\Task2\script.bat
+
+
+3.  1. sc query > services.txt
+    2. script.bat
+
+
+4.  1. driverquery /fo table /nh > DRIVERS.txt
+    2. sort /r DRIVERS.txt /o DRIVERS.txt
